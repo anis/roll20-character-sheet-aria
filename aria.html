@@ -1,4 +1,5 @@
 <div class="main">
+    <input type="hidden" name="attr_version" value="" />
     <input type="hidden" class="ongletActif" name="attr_ongletActif" value="caracteristiques" />
 
     <div class="header">
@@ -427,7 +428,35 @@
             });
         });
     });
-    
+
+    on(`sheet:opened`, function (eventInfo) {
+        getAttrs(['version'], function (values) {
+            console.log(values);
+            if (values.version === "1.0") {
+                return;
+            }
+
+            const toSet = {
+                version: "1.0"
+            };
+            const noms = Object.keys(competences);
+            const base = calculateBase(10, 10, "moyenne");
+            for (let i = 0; i < noms.length; i += 1) {
+                const id = generateRowID();
+                const links = competences[noms[i]].links;
+                toSet[`repeating_competences_${id}_competence_nom`] = noms[i];
+                toSet[`repeating_competences_${id}_competence_stat1`] = links[0];
+                toSet[`repeating_competences_${id}_competence_stat2`] = links[1];
+                toSet[`repeating_competences_${id}_competence_base`] = base;
+                toSet[`repeating_competences_${id}_competence_points`] = 0;
+                toSet[`repeating_competences_${id}_competence_bonus`] = 0;
+                toSet[`repeating_competences_${id}_competence_total`] = base;
+            }
+
+            setAttrs(toSet);
+        });
+    });
+
     function calculateBase(stat1, stat2, methode) {
         if (methode === 'moyenne') {
             return Math.floor((parseInt(stat1, 10) + parseInt(stat2, 10)) / 2) * 5;
