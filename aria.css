@@ -70,7 +70,7 @@ h1 {
 
 .sheet-input-label {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 16px;
     text-transform: uppercase;
 }
@@ -80,14 +80,16 @@ h1 {
     font-size: 0.9em;
 }
 
-.sheet-tableHead,
+div.sheet-tableHead,
+fieldset.sheet-tableHead .sheet-fieldset,
 .sheet-tableBody {
     display: flex;
 }
 
 table.sheet-table th,
 table.sheet-table td,
-.sheet-tableHead > div,
+div.sheet-tableHead > div,
+fieldset.sheet-tableHead > .sheet-fieldset > div,
 .sheet-tableBody > div {
     border: 1px solid #c0ac8a;
 }
@@ -97,12 +99,14 @@ div.sheet-table .sheet-tableBody:not(:first-child) > div {
 }
 
 .sheet-tableBody > div:not(:first-child),
-.sheet-tableHead > div:not(:first-child) {
+div.sheet-tableHead > div:not(:first-child),
+fieldset.sheet-tableHead > .sheet-fieldset > div:not(:first-child) {
     border-left: none;
 }
 
 table.sheet-table thead th,
-.sheet-tableHead > div {
+div.sheet-tableHead > div,
+fieldset.sheet-tableHead > .sheet-fieldset > div{
     padding: 2px 5px;
     color: #fff;
     background: #d8ccb7;
