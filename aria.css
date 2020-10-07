@@ -403,7 +403,7 @@ table.sheet-weapons {
 }
 
 .sheet-weapon-degats {
-    width: 100px;
+    width: 140px;
     text-align: center;
 }
 .sheet-weapon-degats input {
@@ -413,7 +413,7 @@ table.sheet-weapons {
     width: auto;
 }
 .sheet-tableBody .sheet-weapon-degats {
-    width: 110px;
+    width: 150px;
 }
 
 .sheet-weapon-commentaires {
