@@ -22,7 +22,7 @@ Tableau des armes et attaques de votre personnage. Cliquez sur "Add" pour rajout
 
 - JET : cliquer sur le petit dé pour effectuer un jet qui calcule les dégâts portés par l'attaque
 - NOM DE L'ARME : nom de l'arme
-- DÉGÂTS : détail du jet de dégâts de l'arme, sous le format `nombre de dés` + `type de dé`
+- DÉGÂTS : détail du jet de dégâts de l'arme, sous le format `nombre de dés` + `type de dé` + `bonus` (pour des dégâts fixes de 1, vous pouvez faire 0d6 + 1 par exemple)
 - COMMENTAIRES : commentaire libre
 
 ## 2. Onglet "Compétences"
