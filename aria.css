@@ -218,7 +218,7 @@ div.sheet-onglets button:hover {
 }
 
 div.sheet-contenu {
-  height: 389px;
+  min-height: 389px;
   background-image: url(https://raw.githubusercontent.com/anis/roll20-character-sheet-aria/main/images/background.jpg);
   background-repeat: no-repeat;
   background-position: top center;
